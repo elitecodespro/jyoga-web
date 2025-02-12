@@ -49,6 +49,10 @@ export default withAuth(
           return true;
         }
 
+        if (pathname.startsWith("/api/settings")) {
+          return true;
+        }
+
         if (pathname.startsWith("/api")) {
           return true;
         }
