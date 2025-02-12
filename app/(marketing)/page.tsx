@@ -21,8 +21,6 @@ export default async function Home() {
     });
     const data = await result.json();
     settings = data[0];
-    console.log("Settings", settings);
-    
     
   } catch (error) {
     settings = { title: 'Failed to load listing' };

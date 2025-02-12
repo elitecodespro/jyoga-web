@@ -1,5 +1,6 @@
 "use client"
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -8,6 +9,12 @@ export default function MarketingLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [isLoaded, setIsLoaded] = useState(false)
+  
+    useEffect(() =>{
+      setIsLoaded(true)
+    }, [isLoaded])
 
     useEffect(() => {
         AOS.init({
@@ -18,6 +25,10 @@ export default function MarketingLayout({
         });
         AOS.refresh();
     }, []);
+
+    if (!isLoaded) {
+      return <h1>LOADING...</h1>
+    }
 
   return (
     <div className="bg-white dark:bg-black dark:text-white text-black overflow-x-hidden">
