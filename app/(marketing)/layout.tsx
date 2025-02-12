@@ -14,7 +14,7 @@ export default function MarketingLayout({
   
     useEffect(() =>{
       setIsLoaded(true)
-    }, [isLoaded])
+    }, [])
 
     useEffect(() => {
         AOS.init({

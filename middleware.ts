@@ -35,8 +35,8 @@ export default withAuth(
         // Public routes
         if (
           pathname === "/" ||
-          pathname.startsWith("/api/products") ||
-          pathname.startsWith("/products")
+          pathname.startsWith("/api/services") ||
+          pathname.startsWith("/services")
         ) {
           return true;
         }
